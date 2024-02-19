@@ -1,0 +1,20 @@
+const int botaoPin = 2;  
+const int lampadaPin = 13; 
+
+int estadoBotao = 0;
+int estadoLampada = LOW;
+
+void setup() {
+  pinMode(botaoPin, INPUT);
+  pinMode(lampadaPin, OUTPUT);
+}
+
+void loop() {
+  estadoBotao = digitalRead(botaoPin);
+
+  if (estadoBotao == HIGH) {
+    estadoLampada = !estadoLampada;
+    digitalWrite(lampadaPin, estadoLampada);
+    delay(100);
+  }
+}
